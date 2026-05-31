@@ -1,0 +1,24 @@
+﻿[19/02/25 11:28:55] info: Program: Starting Squirrel Updater: --updateSelf=C:\Users\LAB. MARIZETE WEBER\AppData\Local\SquirrelTemp\Update.exe
+[19/02/25 11:28:55] info: Program: About to wait for parent PID 3184
+[19/02/25 11:28:57] fatal: Finished with unhandled exception: System.AggregateException: Um ou mais erros. ---> System.IO.IOException: O processo não pode acessar o arquivo 'C:\Users\LAB. MARIZETE WEBER\AppData\Local\WeMod\app-8.2.0\..\Update.exe' porque ele está sendo usado por outro processo.
+   em System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   em System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   em System.Threading.Tasks.Task.Execute()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Squirrel.Update.Program.<UpdateSelf>d__6.MoveNext()
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   em System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   em Squirrel.Update.Program.executeCommandLine(String[] args)
+   em Squirrel.Update.Program.main(String[] args)
+---> (Exceção Interna N° 0) System.IO.IOException: O processo não pode acessar o arquivo 'C:\Users\LAB. MARIZETE WEBER\AppData\Local\WeMod\app-8.2.0\..\Update.exe' porque ele está sendo usado por outro processo.
+   em System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   em System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite, Boolean checkHost)
+   em System.Threading.Tasks.Task.Execute()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Squirrel.Update.Program.<UpdateSelf>d__6.MoveNext()<---
+
