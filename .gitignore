@@ -1,2 +1,17 @@
 G4T0XX_MOD_MENU.exe
 releases/
+
+reports/
+premium-audit.json
+node_modules/
+release-builds/
+
+/resources/
+/locales/
+/swiftshader/
+/*.dll
+/*.pak
+/*.bin
+/*.exe
+/*.log
+/vk_swiftshader_icd.json

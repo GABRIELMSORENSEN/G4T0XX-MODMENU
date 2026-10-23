@@ -1,32 +1,28 @@
-<p align="center">
-  <img src="resources/app.asar.unpacked/static/unpacked/icon.ico" width="128" height="128" alt="G4T0XX MOD MENU Logo">
-</p>
+# G4T0XX Modmenu 2
 
-<h1 align="center">G4T0XX MOD MENU</h1>
+Gerenciador autoral de jogos e mods locais para Windows, com identidade preta e vermelha G4T0XX. A implementação ativa está em `app/`.
 
-<p align="center">
-  <strong>O seu gerenciador definitivo de Mods e Cheats para jogos de PC.</strong>
-</p>
+## Usar
 
-## 🚀 Sobre o Projeto
+Baixe o instalador ou executável portátil em [Releases](https://github.com/GABRIELMSORENSEN/G4T0XX-MODMENU/releases).
 
-O **G4T0XX MOD MENU** é uma interface customizada e aprimorada projetada para fornecer aos jogadores acesso rápido, fácil e direto a milhares de mods e treinadores (trainers) para os jogos mais populares. Construído de forma totalmente autoral para oferecer a melhor experiência, sem barreiras.
+1. **Adicionar jogo:** selecione o executável `.exe`.
+2. **Importar mod:** selecione a pasta com os arquivos na mesma estrutura relativa da pasta do jogo.
+3. Confira a lista de arquivos e feche o jogo antes de ativar.
+4. **Ativar mod** guarda cópias dos arquivos originais antes de substituí-los.
+5. **Desativar e restaurar** restaura os originais e remove arquivos adicionados pelo mod.
 
-## ✨ Funcionalidades
+O aplicativo bloqueia mods que se sobrepõem a outro ativo, links simbólicos e substituição do executável cadastrado. Se um jogo ou outro programa alterar um arquivo instalado, a restauração é bloqueada para preservar a alteração. Operações interrompidas têm um registro de recuperação; mantenha os backups até resolver qualquer conflito.
 
-- **Acesso Imediato (Pro-Level):** Funcionalidades exclusivas, acesso ao catálogo premium e interação direta com os mods já habilitados nativamente.
-- **Interface Limpa (Ad-Free):** O design foi refinado com um script de "Injeção Agressiva". Painéis desnecessários, telas de "Completar perfil" e anúncios intrusivos foram todos desintegrados.
-- **Identidade Visual Própria:** Overlay customizado (Nuclear Overlay) que sobrepõe de forma elegante o ícone e a marca **G4T0XX** sobre a interface raiz.
-- **Remoção de Burocracia:** O acesso não exige login obrigatório. Toda a interface foca apenas em gerenciar a biblioteca de jogos e ativar os cheats sem perda de tempo.
+Biblioteca, mods importados e backups ficam na pasta de dados do aplicativo no perfil do Windows. Remover um item da biblioteca não apaga a pasta de origem do mod nem a instalação do jogo.
 
-## 📥 Como Instalar e Usar
+## Desenvolvimento
 
-1. Acesse a aba de **[Releases](../../releases)** deste repositório.
-2. Baixe o arquivo compactado `G4T0XX_MOD_MENU_v1.0.0.zip`.
-3. Extraia **todos** os arquivos juntos para uma única pasta no seu computador.
-4. Dê um clique duplo em `G4T0XX_MOD_MENU.exe`.
-5. *(Atenção: Não retire o executável de perto da pasta `resources` ou dos arquivos `.dll`, pois o app precisa do ecossistema completo para abrir sozinho).*
+```powershell
+npm install
+npm test
+npm run start
+npm run dist:win
+```
 
-## 📄 Licença
-
-Distribuído sob a licença [MIT](LICENSE). Desenvolvido e projetado por **GABRIELMSORENSEN**.
+Node.js 22+. O código não depende de catálogos privados, desbloqueio de assinatura ou binários de outro aplicativo. A antiga distribuição binária foi retirada do índice atual do Git; os arquivos locais e tags antigas foram preservados. As novas releases incluem somente o código autoral e o runtime Electron distribuível.
