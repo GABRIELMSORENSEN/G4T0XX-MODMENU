@@ -5,3 +5,5 @@ Preservar integralmente layout, navega??o, tipografia, imagens, componentes e fu
 N?o substituir o aplicativo por uma reimplementa??o. N?o alterar autentica??o, treinadores ou endpoints para aplicar o tema. Dados de sess?o ficam no perfil local, fora da distribui??o.
 
 A compatibilidade de inicializa??o fica isolada em `runtime/g4t0xx-runtime.js`, sem altera??es na l?gica original, autentica??o ou endpoints.
+
+`runtime/g4t0xx-profile.js` alinha o EXE direto ao perfil persistente existente do launcher; n?o l? nem altera credenciais. A linha que o carrega precede o `index.js` original, mantido integralmente.

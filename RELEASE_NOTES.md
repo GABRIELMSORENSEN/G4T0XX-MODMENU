@@ -1,9 +1,8 @@
-# v1.0.1
+# v1.0.2
 
-- Interface original G4T0XX preservada; paleta preta e vermelha.
-- Cat?logo, treinadores, endpoints, navega??o e componentes existentes preservados.
-- Corrigida inicializa??o travada em leituras ass?ncronas do runtime, sem ignorar verifica??es de plataforma ou autentica??o.
-- Launcher com perfil local persistente, reaproveitamento de sess?o v?lida e reutiliza??o de inst?ncia aberta.
-- Pacote sem hist?rico Git, release duplicada, logs ou backup do ASAR. Sess?es pessoais n?o s?o distribu?das.
+Corrige a aparente perda de login ao abrir o EXE diretamente: ele agora usa o mesmo perfil persistente do launcher, quando esse perfil j? existe. Uma pasta de perfil diferente era aberta pelo execut?vel; a sess?o salva n?o havia sido apagada.
 
-Valida??o: execut?vel real, cat?logo e painel PEAK, resposta HTTPS do servi?o e integridade de 222 arquivos originais. Nenhum treinador foi executado; funcionamento dentro de cada jogo n?o foi validado. A sess?o pode expirar no servidor.
+- Mantidos interface preta/vermelha, layout, servidores e autentica??o existentes.
+- Preservados perfis e credenciais locais; nenhuma sess?o pessoal integra o pacote.
+- Respeitado `--user-data-dir` expl?cito para perfis isolados.
+- Verificados cat?logo e conta salva na abertura direta. Validade do login continua sujeita ao servidor.

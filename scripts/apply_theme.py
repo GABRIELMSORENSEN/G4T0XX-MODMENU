@@ -1,4 +1,4 @@
-"""Apply only the G4T0XX color stylesheet to the original ASAR archive."""
+"""Apply the G4T0XX palette and isolated runtime/profile compatibility bootstraps."""
 import argparse
 import hashlib
 import json
@@ -35,9 +35,12 @@ def main():
     if b'</head>' not in index:
         raise ValueError('Original HTML has no head')
     index = index.replace(b'</head>', addition + b'\n</head>', 1)
+    main_entry = header['files']['index.js']
+    start = int(main_entry['offset'])
+    main = b"require('./g4t0xx-profile.js');\n" + data[start:start + main_entry['size']]
     css = (ROOT / 'ui/g4t0xx-theme.css').read_bytes()
     runtime = (ROOT / 'runtime/g4t0xx-runtime.js').read_bytes()
-    for name, content in [('index.html', index), ('g4t0xx-theme.css', css), ('g4t0xx-runtime.js', runtime)]:
+    for name, content in [('index.html', index), ('g4t0xx-theme.css', css), ('g4t0xx-runtime.js', runtime), ('index.js', main), ('g4t0xx-profile.js', (ROOT / 'runtime/g4t0xx-profile.js').read_bytes())]:
         header['files'][name] = {'size': len(content), 'offset': str(len(data)),
                                  'integrity': integrity(content)}
         data += content
@@ -45,7 +48,7 @@ def main():
     padded = (len(encoded) + 3) & ~3
     packed = struct.pack('<IIII', 4, 8 + padded, 4 + padded, len(encoded))
     patched = packed + encoded + bytes(padded - len(encoded)) + data
-    # Every pre-existing payload other than the HTML link must remain byte-identical.
+    # Original payloads remain identical except for the HTML links and main bootstrap prefix.
     old_header, old_data = parse(original)
     new_header, new_data = parse(patched)
     count = 0
@@ -55,18 +58,19 @@ def main():
             target = new[name]
             if 'files' in entry:
                 check(entry['files'], target['files'])
-            elif 'offset' in entry and name != 'index.html':
+            elif 'offset' in entry and name not in ('index.html', 'index.js'):
                 start, size = int(entry['offset']), entry['size']
                 end = int(target['offset'])
                 assert old_data[start:start + size] == new_data[end:end + target['size']], name
                 count += 1
     check(old_header['files'], new_header['files'])
+    assert main.split(b'\n', 1)[1] == old_data[int(old_header['files']['index.js']['offset']):int(old_header['files']['index.js']['offset']) + old_header['files']['index.js']['size']]
     options.output.parent.mkdir(parents=True, exist_ok=True)
     options.output.write_bytes(patched)
-    report = {'original_core_unchanged': True, 'unchanged_original_payloads': count,
+    report = {'original_main_retained_after_profile_bootstrap': True, 'unchanged_original_payloads': count,
               'original_sha256': hashlib.sha256(original).hexdigest(),
               'themed_sha256': hashlib.sha256(patched).hexdigest(),
-              'changed_files': ['index.html', 'g4t0xx-theme.css', 'g4t0xx-runtime.js'],
+              'changed_files': ['index.html', 'g4t0xx-theme.css', 'g4t0xx-runtime.js', 'index.js', 'g4t0xx-profile.js'],
               'authentication_changed': False, 'server_endpoints_changed': False}
     (ROOT / 'verification/theme-integrity.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report))

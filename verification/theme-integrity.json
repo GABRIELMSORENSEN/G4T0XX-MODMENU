@@ -1,12 +1,14 @@
 {
-  "original_core_unchanged": true,
-  "unchanged_original_payloads": 222,
+  "original_main_retained_after_profile_bootstrap": true,
+  "unchanged_original_payloads": 221,
   "original_sha256": "0c227ab998b0f811e37103cfe6b639fc1b674dfd23447c97a13724aca7aa3bff",
-  "themed_sha256": "123b61adcdb6e4de0c427ca12f7a7f2d2cc07318af872873456f4fad38c55434",
+  "themed_sha256": "840f65162462dcb86dd8eae9dfecc7d237afc153949d7339d0a357c238589718",
   "changed_files": [
     "index.html",
     "g4t0xx-theme.css",
-    "g4t0xx-runtime.js"
+    "g4t0xx-runtime.js",
+    "index.js",
+    "g4t0xx-profile.js"
   ],
   "authentication_changed": false,
   "server_endpoints_changed": false

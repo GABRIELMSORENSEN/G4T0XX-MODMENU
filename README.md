@@ -17,3 +17,5 @@ Abertura do executável original, catálogo, sessão salva e painel de mods do P
 O pacote não contém sessões, cookies, contas nem credenciais do desenvolvedor. Arquivos de personalização seguem a licença deste repositório; componentes da base mantêm as licenças e requisitos dos respectivos fornecedores.
 
 Uma corre??o pequena de compatibilidade mant?m o loop Node ativo durante a inicializa??o do runtime existente. Isso evita leituras de arquivo pendentes na checagem do .NET, preservando as verifica??es de plataforma e login. Uma segunda chamada do launcher reutiliza a inst?ncia j? aberta.
+
+Corre??o v1.0.2: abrir o EXE diretamente passa a selecionar o mesmo perfil local do launcher quando ele j? existe. Argumentos expl?citos `--user-data-dir` s?o respeitados. Isso evita mostrar a tela de login por abrir uma pasta de perfil diferente. Nenhuma credencial foi alterada ou inclu?da na release.

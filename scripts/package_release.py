@@ -15,7 +15,7 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     additions = ['resources/app.asar', 'Start-G4T0XX.cmd', 'Start-G4T0XX.ps1',
                  'README.md', 'VALIDACAO.md', 'RELEASE_NOTES.md', 'LICENSE',
-                 'DESIGN.md', 'ui/g4t0xx-theme.css', 'runtime/g4t0xx-runtime.js', 'verification/theme-integrity.json']
+                 'DESIGN.md', 'ui/g4t0xx-theme.css', 'runtime/g4t0xx-runtime.js', 'runtime/g4t0xx-profile.js', 'verification/theme-integrity.json', 'verification/login-profile.json']
     additions += [p.relative_to(ROOT).as_posix() for p in (ROOT / 'THIRD_PARTY_LICENSES').rglob('*') if p.is_file()]
     allowed_dirs = {'resources', 'locales', 'swiftshader'}
     allowed_root = {'.exe', '.dll', '.pak', '.bin', '.dat', '.json'}
