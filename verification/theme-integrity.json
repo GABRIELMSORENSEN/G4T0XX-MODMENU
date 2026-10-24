@@ -1,0 +1,13 @@
+{
+  "original_core_unchanged": true,
+  "unchanged_original_payloads": 222,
+  "original_sha256": "0c227ab998b0f811e37103cfe6b639fc1b674dfd23447c97a13724aca7aa3bff",
+  "themed_sha256": "123b61adcdb6e4de0c427ca12f7a7f2d2cc07318af872873456f4fad38c55434",
+  "changed_files": [
+    "index.html",
+    "g4t0xx-theme.css",
+    "g4t0xx-runtime.js"
+  ],
+  "authentication_changed": false,
+  "server_endpoints_changed": false
+}

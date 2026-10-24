@@ -1,0 +1,17 @@
+{
+  "original_executable_unchanged": true,
+  "valid_existing_session_used": true,
+  "original_profile_preserved": true,
+  "launcher_tested": true,
+  "catalog_visible": true,
+  "game": "PEAK",
+  "trainer_metadata_http": 200,
+  "trainer_executed_in_game": false,
+  "original_code_unchanged": true,
+  "palette_black_red": true,
+  "restart_tested": true,
+  "async_filesystem_healthy": true,
+  "packaged_runtime_compatibility": true,
+  "cold_open_and_reopen_verified": true,
+  "duplicate_launcher_reuses_instance": true
+}

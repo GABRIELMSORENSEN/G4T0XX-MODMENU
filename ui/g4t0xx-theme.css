@@ -1,0 +1,50 @@
+/* G4T0XX: palette only. Original layout, typography and application behavior remain intact. */
+:root, body, body[class*="theme-"], body::before, body::after {
+  --theme--background: #0c0c0e !important;
+  --theme--background--rgb: 12, 12, 14 !important;
+  --theme--secondary-background: #201214 !important;
+  --theme--secondary-background--rgb: 32, 18, 20 !important;
+  --theme--highlight: #e8273f !important;
+  --theme--highlight--rgb: 232, 39, 63 !important;
+  --theme--default--background: #0c0c0e !important;
+  --theme--default--background--rgb: 12, 12, 14 !important;
+  --theme--default--secondary-background: #201214 !important;
+  --theme--default--secondary-background--rgb: 32, 18, 20 !important;
+  --theme--default--highlight: #e8273f !important;
+  --theme--default--highlight--rgb: 232, 39, 63 !important;
+  --color--pro: #b91830 !important;
+  --color--pro--rgb: 185, 24, 48 !important;
+  --color--accent: #ff4158 !important;
+  --color--accent--rgb: 255, 65, 88 !important;
+  --color--brand-blue: #ff4158 !important;
+  --color--brand-blue--rgb: 255, 65, 88 !important;
+  --color--brand-green: #e8273f !important;
+  --color--brand-green--rgb: 232, 39, 63 !important;
+}
+body[class*="theme-"] ux-dialog,
+body[class*="theme-"] .tooltip .tooltip-content,
+body[class*="theme-"] .tooltip [slot="content"],
+body[class*="theme-"] .tooltip .tooltip-arrow,
+body[class*="theme-"] toasts .messages .message {
+  background: #181315 !important;
+}
+body[class*="theme-"] app-header-user .actions { background: #22171a !important; }
+body[class*="theme-"] section.dashboard .game-feed,
+body[class*="theme-"] section.dashboard .sections section.announcements {
+  --overflow-fade--background: #171214 !important;
+}
+
+/* Preserve the original play control shape, pulse and icon, recoloring its gradient. */
+body .button.play,
+body .button.play .gradient {
+  background: linear-gradient(100deg, #b91830 0%, #f12b45 100%) !important;
+}
+body .button.play::before,
+body .button.play::after {
+  background: linear-gradient(100deg, #7e1022 0%, #ff4158 100%) !important;
+}
+
+body .button.play .gradient::before,
+body .button.play .gradient::after {
+  background: linear-gradient(100deg, #b91830 0%, #f12b45 100%) !important;
+}

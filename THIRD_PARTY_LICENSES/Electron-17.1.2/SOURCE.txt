@@ -1,0 +1,3 @@
+https://github.com/electron/electron/releases/download/v17.1.2/electron-v17.1.2-win32-ia32.zip
+SHA256 5fc04e1ffa176f30c5ecf3c4451b3e5866b44fd2b64ec008d462f15d01aefbed
+Original runtime license notices; binary runtime was not replaced.

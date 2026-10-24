@@ -1,32 +1,19 @@
-<p align="center">
-  <img src="resources/app.asar.unpacked/static/unpacked/icon.ico" width="128" height="128" alt="G4T0XX MOD MENU Logo">
-</p>
+# G4T0XX MOD MENU
 
-<h1 align="center">G4T0XX MOD MENU</h1>
+Interface personalizada sobre a base original do WeMod. Catálogo, treinadores, serviços e componentes foram preservados; o aplicativo não foi reimplementado.
 
-<p align="center">
-  <strong>O seu gerenciador definitivo de Mods e Cheats para jogos de PC.</strong>
-</p>
+## Abrir
 
-## 🚀 Sobre o Projeto
+1. Extraia o pacote completo da release.
+2. Execute **Start-G4T0XX.cmd** na pasta extraída.
+3. O launcher prepara o acesso de leitura aos arquivos do aplicativo e usa um perfil separado em `%LOCALAPPDATA%/G4T0XX/Modmenu/Profile`.
 
-O **G4T0XX MOD MENU** é uma interface customizada e aprimorada projetada para fornecer aos jogadores acesso rápido, fácil e direto a milhares de mods e treinadores (trainers) para os jogos mais populares. Construído de forma totalmente autoral para oferecer a melhor experiência, sem barreiras.
+Na primeira execução, uma sessão local já existente no WeMod é copiada para esse perfil, preservando os dados originais. Com uma sessão válida, o catálogo abre sem digitar credenciais novamente. O launcher não remove a autenticação do servidor: sem sessão válida ou após expiração, o serviço pode exigir login.
 
-## ✨ Funcionalidades
+## Verificado neste PC
 
-- **Acesso Imediato (Pro-Level):** Funcionalidades exclusivas, acesso ao catálogo premium e interação direta com os mods já habilitados nativamente.
-- **Interface Limpa (Ad-Free):** O design foi refinado com um script de "Injeção Agressiva". Painéis desnecessários, telas de "Completar perfil" e anúncios intrusivos foram todos desintegrados.
-- **Identidade Visual Própria:** Overlay customizado (Nuclear Overlay) que sobrepõe de forma elegante o ícone e a marca **G4T0XX** sobre a interface raiz.
-- **Remoção de Burocracia:** O acesso não exige login obrigatório. Toda a interface foca apenas em gerenciar a biblioteca de jogos e ativar os cheats sem perda de tempo.
+Abertura do executável original, catálogo, sessão salva e painel de mods do PEAK. O servidor original retornou HTTP 200 para o treinador. Nenhum treinador foi executado e nenhum jogo foi modificado nesse teste. Veja `VALIDACAO.md`.
 
-## 📥 Como Instalar e Usar
+O pacote não contém sessões, cookies, contas nem credenciais do desenvolvedor. Arquivos de personalização seguem a licença deste repositório; componentes da base mantêm as licenças e requisitos dos respectivos fornecedores.
 
-1. Acesse a aba de **[Releases](../../releases)** deste repositório.
-2. Baixe o arquivo compactado `G4T0XX_MOD_MENU_v1.0.0.zip`.
-3. Extraia **todos** os arquivos juntos para uma única pasta no seu computador.
-4. Dê um clique duplo em `G4T0XX_MOD_MENU.exe`.
-5. *(Atenção: Não retire o executável de perto da pasta `resources` ou dos arquivos `.dll`, pois o app precisa do ecossistema completo para abrir sozinho).*
-
-## 📄 Licença
-
-Distribuído sob a licença [MIT](LICENSE). Desenvolvido e projetado por **GABRIELMSORENSEN**.
+Uma corre??o pequena de compatibilidade mant?m o loop Node ativo durante a inicializa??o do runtime existente. Isso evita leituras de arquivo pendentes na checagem do .NET, preservando as verifica??es de plataforma e login. Uma segunda chamada do launcher reutiliza a inst?ncia j? aberta.
